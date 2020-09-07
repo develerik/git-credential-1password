@@ -11,6 +11,7 @@ Helper to store git credentials inside 1password.
 
 - [Installation](#installation)
   - [Dependencies](#dependencies)
+  - [Arch Linux](#arch-linux)
 - [Usage](#usage)
 - [Support](#support)
 - [Roadmap](#roadmap)
@@ -23,6 +24,21 @@ Helper to store git credentials inside 1password.
 
 **Note**: Currently only installation from source is supported, so you must have `go` and `make` installed.
 
+### Dependencies
+
+To use this helper you need to install the 1password cli tool ([download](https://support.1password.com/command-line-getting-started/#set-up-the-command-line-tool))
+and of course git.  
+You also need to setup the cli tool with your 1password account ([guide](https://support.1password.com/command-line-getting-started/#get-started-with-the-command-line-tool)).
+
+### Arch Linux
+
+On Arch Linux the following packages are available at the AUR:
+
+- `git-credential-1password-git`: Builds the current `main` branch
+- `git-credential-1password-dev-git`: Builds the current `develop` branch
+
+### From Source
+
 ```shell script
 git clone https://github.com/develerik/git-credential-1password.git
 cd git-credential-1password
@@ -30,12 +46,6 @@ make git-credential-1password
 ```
 
 Move the built binary (inside the `bin` directory) to somewhere in your PATH.
-
-### Dependencies
-
-To use this helper you need to install the 1password cli tool ([download](https://support.1password.com/command-line-getting-started/#set-up-the-command-line-tool))
-and of course git.  
-You also need to setup the cli tool with your 1password account ([guide](https://support.1password.com/command-line-getting-started/#get-started-with-the-command-line-tool)).
 
 ## Usage
 
