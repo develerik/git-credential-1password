@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"os"
 	"os/exec"
+	"runtime"
 	"strings"
 
 	"golang.org/x/crypto/ssh/terminal"
@@ -15,10 +16,27 @@ import (
 
 var (
 	errNoSessionToken = errors.New("no session token found")
+	errNotSupported   = errors.New("os not supported")
 )
 
+func getTTYPath() (string, error) {
+	ttyPath := ""
+
+	switch runtime.GOOS {
+	case "darwin":
+	case "linux":
+		ttyPath = "/dev/tty"
+	case "windows":
+		ttyPath = "CON:"
+	default:
+		return "", errNotSupported
+	}
+
+	return ttyPath, nil
+}
+
 // Login to 1password.
-func (c *Client) Login(timeout uint) error {
+func (c *Client) Login(timeout uint) error { // nolint:funlen // TODO: refactor
 	var err error
 	c.token, err = git.GetFromCache(c.Account)
 
@@ -30,11 +48,13 @@ func (c *Client) Login(timeout uint) error {
 		return nil
 	}
 
-	if _, err = fmt.Fprint(os.Stderr, "Enter your 1password master password: "); err != nil {
+	ttyPath, err := getTTYPath()
+
+	if err != nil {
 		return err
 	}
 
-	tty, err := os.Open("/dev/tty")
+	tty, err := os.Open(ttyPath)
 
 	if err != nil {
 		return err
@@ -43,6 +63,10 @@ func (c *Client) Login(timeout uint) error {
 	defer func() {
 		_ = tty.Close()
 	}()
+
+	if _, err = fmt.Fprint(os.Stderr, "Enter your 1password master password: "); err != nil {
+		return err
+	}
 
 	fd := int(tty.Fd())
 	pass, err := terminal.ReadPassword(fd)

@@ -23,7 +23,7 @@ func GetVersion() (string, error) {
 
 	v := strings.Split(stdout.String(), " ")
 
-	if len(v) != 3 {
+	if len(v) != 3 { // nolint:gomnd // git version output parts
 		return "", errors.New("could not parse git version") // nolint:goerr113 // TODO: refactor
 	}
 

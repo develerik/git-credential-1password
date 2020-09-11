@@ -31,7 +31,7 @@ GO_FILES = $(shell find . -name '*.go')
 .DEFAULT_GOAL:=help
 
 $(GO_LINTER):
-	GO111MODULE=off go get github.com/golangci/golangci-lint/cmd/golangci-lint@v1.30.0
+	GO111MODULE=off go get github.com/golangci/golangci-lint/cmd/golangci-lint@v1.31.0
 
 ##@ Build
 
