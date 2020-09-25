@@ -8,9 +8,18 @@ type Credentials struct {
 
 type response struct {
 	Details struct {
-		Fields []struct {
-			Name  string `json:"name"`
-			Value string `json:"value"`
-		} `json:"fields"`
+		Fields []field `json:"fields"`
 	} `json:"details"`
+}
+
+type login struct {
+	Fields []field `json:"fields"`
+	Notes  string  `json:"notesPlain"`
+}
+
+type field struct {
+	Name        string `json:"name"`
+	Value       string `json:"value"`
+	Type        string `json:"type"`
+	Designation string `json:"designation"`
 }

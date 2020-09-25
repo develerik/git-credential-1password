@@ -65,7 +65,8 @@ more people can benefit from it.
 
 ## Roadmap
 
-- Support `store` and `erase` operations
+- Support and `erase` operation
+- Support selecting the vault to use (maybe even multiple)
 <!--No changes are currently planned.-->
 
 ## Contributing
