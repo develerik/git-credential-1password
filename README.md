@@ -67,6 +67,7 @@ more people can benefit from it.
 
 - Support and `erase` operation
 - Support selecting the vault to use (maybe even multiple)
+- Maybe an interactive mode for each operation
 <!--No changes are currently planned.-->
 
 ## Contributing
