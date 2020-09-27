@@ -52,7 +52,5 @@ func storeCredentials(r io.Reader) error {
 		return nil
 	}
 
-	err = c.StoreCredentials(protocol, host, username, password)
-
-	return err
+	return c.StoreCredentials(protocol, host, username, password)
 }
