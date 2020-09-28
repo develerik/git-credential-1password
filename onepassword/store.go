@@ -12,6 +12,12 @@ import (
 
 // StoreCredentials saves new credentials to 1password.
 func (c *Client) StoreCredentials(protocol, host, username, password string) error {
+	creds, err := c.GetCredentials(host)
+
+	if err != nil || creds != nil {
+		return nil
+	}
+
 	var stdout bytes.Buffer
 
 	var stderr bytes.Buffer
