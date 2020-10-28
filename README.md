@@ -67,6 +67,7 @@ more people can benefit from it.
 
 - Support selecting the vault to use (maybe even multiple)
 - Maybe an interactive mode for each operation
+- Evaluate the `--cache` parameter introduced in the latest 1pass cli release
 <!--No changes are currently planned.-->
 
 ## Contributing
