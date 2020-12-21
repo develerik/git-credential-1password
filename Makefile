@@ -37,7 +37,7 @@ $(GO_LINTER):
 
 .PHONY: git-credential-1password
 
-git-credential-1password: bin/git-credential-1password$(SUFFIX) ## Build git-credential-1password
+credential-helper: bin/git-credential-1password$(SUFFIX) ## Build git-credential-1password
 
 bin/git-credential-1password$(SUFFIX): $(GO_FILES)
 	$(GO_BUILD) -ldflags '$(GO_BUILD_FLAGS)' -o bin/git-credential-1password$(SUFFIX) $(PACKAGE)
