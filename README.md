@@ -26,7 +26,7 @@ Helper to store git credentials inside 1password.
 
 ### Dependencies
 
-To use this helper you need to install the 1password cli tool ([download](https://support.1password.com/command-line-getting-started/#set-up-the-command-line-tool))
+To use this helper you need to install the 1password cli tool (>=1.8.0) ([download](https://support.1password.com/command-line-getting-started/#set-up-the-command-line-tool))
 and of course git.  
 You also need to setup the cli tool with your 1password account ([guide](https://support.1password.com/command-line-getting-started/#get-started-with-the-command-line-tool)).
 
