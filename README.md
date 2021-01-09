@@ -42,7 +42,7 @@ On Arch Linux the following packages are available at the AUR:
 ```shell script
 git clone https://github.com/develerik/git-credential-1password.git
 cd git-credential-1password
-make git-credential-1password
+make credential-helper
 ```
 
 Move the built binary (inside the `bin` directory) to somewhere in your PATH.
