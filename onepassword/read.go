@@ -4,7 +4,8 @@ import (
 	"bytes"
 	"encoding/json"
 	"errors"
-	"os/exec"
+
+	exec "golang.org/x/sys/execabs"
 )
 
 // GetCredentials loads credentials from 1password.

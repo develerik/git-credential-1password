@@ -3,8 +3,9 @@ package onepassword
 import (
 	"bytes"
 	"errors"
-	"os/exec"
 	"strings"
+
+	exec "golang.org/x/sys/execabs"
 )
 
 // GetVersion returns the installed 1password cli version.

@@ -5,9 +5,10 @@ import (
 	"errors"
 	"fmt"
 	"os"
-	"os/exec"
 	"runtime"
 	"strings"
+
+	exec "golang.org/x/sys/execabs"
 
 	"golang.org/x/crypto/ssh/terminal"
 

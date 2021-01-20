@@ -4,7 +4,8 @@ import (
 	"bytes"
 	"errors"
 	"fmt"
-	"os/exec"
+
+	exec "golang.org/x/sys/execabs"
 )
 
 var eof []byte

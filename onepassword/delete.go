@@ -3,7 +3,8 @@ package onepassword
 import (
 	"bytes"
 	"errors"
-	"os/exec"
+
+	exec "golang.org/x/sys/execabs"
 )
 
 // DeleteCredentials deletes credentials from 1password.
