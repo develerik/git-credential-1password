@@ -15,7 +15,7 @@ func (c *Client) GetCredentials(host string) (*Credentials, error) {
 	var stderr bytes.Buffer
 
 	// TODO: handle session expired error
-	cmd := exec.Command("op",  "--cache", "--session", c.token, "get", "item", host) // nolint:gosec // TODO: validate
+	cmd := exec.Command("op", "--cache", "--session", c.token, "get", "item", host) // nolint:gosec // TODO: validate
 	cmd.Stdout = &stdout
 	cmd.Stderr = &stderr
 

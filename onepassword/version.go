@@ -14,7 +14,7 @@ func GetVersion() (string, error) {
 
 	var stderr bytes.Buffer
 
-	cmd := exec.Command("op",  "--version")
+	cmd := exec.Command("op", "--version")
 	cmd.Stdout = &stdout
 	cmd.Stderr = &stderr
 

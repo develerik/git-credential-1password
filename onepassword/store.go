@@ -54,7 +54,7 @@ func (c *Client) StoreCredentials(protocol, host, username, password string) err
 	encData = strings.ReplaceAll(encData, "/", "_") // 63rd char of encoding
 	encData = strings.ReplaceAll(encData, "=", "")  // Remove any trailing '='s
 
-	cmd := exec.Command("op",  "--cache", "--session", c.token, // nolint:gosec // TODO: validate
+	cmd := exec.Command("op", "--cache", "--session", c.token, // nolint:gosec // TODO: validate
 		"create", "item", "Login", encData,
 		"--title", host, "--tags", "git")
 	cmd.Stdout = &stdout
