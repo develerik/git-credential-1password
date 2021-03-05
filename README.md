@@ -12,6 +12,7 @@ Helper to store git credentials inside 1password.
 - [Installation](#installation)
   - [Dependencies](#dependencies)
   - [Arch Linux](#arch-linux)
+  - [From Source](#from-source)
 - [Usage](#usage)
 - [Support](#support)
 - [Roadmap](#roadmap)
@@ -21,8 +22,6 @@ Helper to store git credentials inside 1password.
 - [License](#license)
 
 ## Installation
-
-**Note**: Currently only installation from source is supported, so you must have `go` and `make` installed.
 
 ### Dependencies
 
@@ -34,6 +33,8 @@ You also need to setup the cli tool with your 1password account ([guide](https:/
 
 On Arch Linux the following packages are available at the AUR:
 
+- `git-credential-1password`: The latest release
+- `git-credential-1password-bin`: The latest release (prebuild)
 - `git-credential-1password-git`: Builds the current `main` branch
 - `git-credential-1password-dev-git`: Builds the current `develop` branch
 
